@@ -4,39 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>specific-book</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <header>
-      <hr />
-      <p><span>JS BAND STORE</span> / Krekoten Oleksandr</p>
-      <img src="../img/cart.svg" alt="cart" width="50" />
-      <button type="submit">Sign-Out</button>
-      <a>TestUser</a>
-      <hr />
+    <header class="header">
+      <div class="container">
+        <div class="header_wrapper">
+          <p class="logo">
+            <span class="logo_name">js band store</span> / Krekoten Oleksandr
+          </p>
+          <div class="header-user-info">
+            <img src="../img/cart.svg" alt="cart" width="50" class="cart" />
+            <button type="submit" class="btn">Sign-Out</button>
+            <div class="user">
+              <img src="../img/avatar.png" alt="user photo" width="40" />
+              <p class="">Test User</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <main>
-      <section>
-        <img src="../img/git_for_teams.jpg" alt="book cover" />
-        <p>
-          <span><strong>Book name: </strong></span>JavaScript: The Definitive
-          Guide, 7th Edition
-        </p>
-        <p>
-          <span><strong>Book author: </strong></span>David Flanagan
-        </p>
-        <p>
-          <span><strong>Book level: </strong></span>Beginner
-        </p>
-        <p>
-          <span><strong>Book tags: </strong></span>frontend
-        </p>
-        <p>Price: $52.72</p>
-        <label for="count">
-          Count
-          <input type="text" id="count" />
-        </label>
-        <p>Total price: $52.72</p>
-        <button type="submit">Add to cart</button>
+      <section class="container">
+        <div class="specific-book_wrapper">
+          <img
+            src="../img/git_for_teams.jpg"
+            alt="book cover"
+            class="book_img"
+          />
+          <div class="book_description">
+            <div>
+              <p>
+                <span><strong>Book name: </strong></span>JavaScript: The
+                Definitive Guide, 7th Edition
+              </p>
+              <p>
+                <span><strong>Book author: </strong></span>David Flanagan
+              </p>
+              <p>
+                <span><strong>Book level: </strong></span>Beginner
+              </p>
+              <p>
+                <span><strong>Book tags: </strong></span>frontend
+              </p>
+            </div>
+            <div class="add-to-cart_form">
+              <p class="add-to-cart_text">Price: <span>$52.72</span></p>
+              <div class="add-to-cart_text">
+                <label for="count"> Count</label>
+                <input
+                  type="number"
+                  id="count"
+                  min="1"
+                  max="19"
+                  class="add-to-cart_input"
+                />
+              </div>
+
+              <p class="add-to-cart_text">Total price: <span> $52.72</span></p>
+              <button type="submit" class="btn add-to-cart_btn">
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
         <p>
           <span><strong>Description: </strong></span>JavaScript is the
           programming language of the web and is used by more software

@@ -4,21 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>signin</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <header>
-      <hr />
-      <p><span>JS BAND STORE</span> / Krekoten Oleksandr</p>
-      <hr />
+    <header class="header">
+      <div class="container">
+        <div class="header_wrapper">
+          <p class="logo">
+            <span class="logo_name">js band store</span> / Krekoten Oleksandr
+          </p>
+        </div>
+      </div>
     </header>
     <main>
       <section>
-        <img src="../img/avatar.png" alt="user photo" width="300" />
-        <form>
-          <label for="user">Username</label>
-          <input type="text" id="user" placeholder="type Username" />
-          <button type="submit">Sign-In</button>
-        </form>
+        <div class="container">
+          <div class="signin_wrapper">
+            <img
+              src="../img/avatar.png"
+              alt="user photo"
+              width="300"
+              class="user_photo"
+            />
+            <form class="signin_form">
+              <label for="user">Username</label>
+              <input
+                type="text"
+                id="user"
+                placeholder="type Username"
+                class="signin_form_input"
+              />
+              <button type="submit" class="signin_form_btn btn">Sign-In</button>
+            </form>
+          </div>
+        </div>
       </section>
     </main>
   </body>
