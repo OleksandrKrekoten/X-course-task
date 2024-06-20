@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>specific-book</title>
+    <title>Book</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -56,19 +56,20 @@
               </p>
             </div>
             <div class="add-to-cart_form">
-              <p class="add-to-cart_text">Price: <span>$52.72</span></p>
+              <p  class="add-to-cart_text">Price: <span id="price">$52.72</span></p>
               <div class="add-to-cart_text">
                 <label for="count"> Count</label>
                 <input
                   type="number"
                   id="count"
                   min="1"
-                  max="19"
+                  max="42"
                   class="add-to-cart_input"
+                  value="2"
                 />
               </div>
 
-              <p class="add-to-cart_text">Total price: <span> $52.72</span></p>
+              <p class="add-to-cart_text" >Total price: <span id="totalPrice"> $52.72</span></p>
               <button type="submit" class="btn add-to-cart_btn">
                 Add to cart
               </button>
@@ -92,5 +93,6 @@
         </p>
       </section>
     </main>
+    <script src="./main.js"></script>
   </body>
 </html>

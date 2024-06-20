@@ -83,20 +83,20 @@ body {
 .book_img {
   width: 100%;
   @media screen and (min-width: 720px) {
-    width: 40%;
+    width: 38%;
   }
   @media screen and (min-width: 1400px) {
     width: 25%;
   }
 }
 .add-to-cart_form {
-  font-size: 22px;
   font-weight: 800;
   align-items: end;
   width: 100%;
   padding: 20px;
   height: max-content;
   border: 2px dotted #000;
+
   @media screen and (min-width: 1400px) {
     width: 50%;
   }
@@ -107,8 +107,8 @@ body {
 }
 .add-to-cart_input {
   font-weight: 800;
-  width: 66px;
+  width: 50px;
   height: 24px;
-  padding: 10px;
+
   border-radius: 6px;
 }
