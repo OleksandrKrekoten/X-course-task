@@ -31,11 +31,22 @@ export const Input = styled.input`
   border-radius: 4px;
 `;
 export const SubmitBtn = styled.button`
-  padding: 8px;
+  padding: 6px 10px;
+  background: center/220%
+    linear-gradient(100deg, #1b9aaa 0% 50%, #f8ffe5 50% 100%);
+  color: #f8ffe5;
+  background-position-x: 0%;
+  box-shadow: 0 0 0 2px #1b9aaa inset;
   border-radius: 6px;
-  transition: background-color 300ms;
-  :hover,
-  :focus {
-    background-color: gray;
+  transition: background-position-x 150ms, transform 150ms;
+  &:focus,
+  &:hover {
+    background-position-x: 100%;
+    color: #1b9aaa;
+  }
+  :disabled {
+    background: #808080;
+    color: #c04141;
+    box-shadow: 0 0 0 2px #c04141 inset;
   }
 `;

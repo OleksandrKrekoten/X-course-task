@@ -1,13 +1,18 @@
 import styled from "@emotion/styled";
 export const PurchaseBtn = styled.button`
+  padding: 6px 10px;
   margin-left: auto;
-  padding: 8px;
-  border: 1px solid black;
+  background: center/220%
+    linear-gradient(100deg, #1b9aaa 0% 50%, #f8ffe5 50% 100%);
+  color: #f8ffe5;
+  background-position-x: 0%;
+  box-shadow: 0 0 0 2px #1b9aaa inset;
   border-radius: 6px;
-  transition: background-color 300ms;
-  :hover,
-  :focus {
-    background-color: gray;
+  transition: background-position-x 150ms, transform 150ms;
+  &:focus,
+  &:hover {
+    background-position-x: 100%;
+    color: #1b9aaa;
   }
 `;
 export const CartEmpty = styled.div`

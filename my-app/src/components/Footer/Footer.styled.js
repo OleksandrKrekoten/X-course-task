@@ -10,14 +10,17 @@ export const SiteFooter = styled.footer`
   margin-top: auto;
 `;
 export const FooterLink = styled.a`
-  text-decoration: none;
-  color: #000;
-  background-color: #fff;
-  padding: 6px;
-  border-radius: 10px;
-  transition: background-color 300ms;
-  :hover,
-  .btn:focus {
-    background-color: gray;
+  padding: 6px 10px;
+  background: center/220%
+    linear-gradient(100deg, #1b9aaa 0% 50%, #f8ffe5 50% 100%);
+  color: #f8ffe5;
+  background-position-x: 0%;
+  box-shadow: 0 0 0 2px #1b9aaa inset;
+  border-radius: 6px;
+  transition: background-position-x 150ms, transform 150ms;
+  &:focus,
+  &:hover {
+    background-position-x: 100%;
+    color: #1b9aaa;
   }
 `;

@@ -4,7 +4,7 @@ export const FlexWrapper = styled.div`
   display: flex;
   gap: 20px;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 20px ;
 
   @media screen and (min-width: 720px) {
     justify-content: space-evenly;
@@ -23,6 +23,7 @@ export const BookImg = styled.img`
 export const BookDescription = styled.div`
   display: flex;
   flex-direction: column;
+ gap: 20px;
 
   @media screen and (min-width: 1400px) {
     display: flex;
@@ -31,8 +32,10 @@ export const BookDescription = styled.div`
   }
 `;
 export const AddToCartForm = styled.div`
+display: flex;
+flex-direction: column;
   font-weight: 800;
-  align-items: end;
+  gap: 20px;
   width: 100%;
   padding: 20px;
   height: max-content;
@@ -53,12 +56,17 @@ export const AddToCartInput = styled.input`
   border-radius: 6px;
 `;
 export const SubmitBtn = styled.button`
-  padding: 8px;
-  border: 1px solid black;
+  padding: 6px 10px;
+  background: center/220%
+    linear-gradient(100deg, #1b9aaa 0% 50%, #f8ffe5 50% 100%);
+  color: #f8ffe5;
+  background-position-x: 0%;
+  box-shadow: 0 0 0 2px #1b9aaa inset;
   border-radius: 6px;
-  transition: background-color 300ms;
-  :hover,
-  :focus {
-    background-color: gray;
+  transition: background-position-x 150ms, transform 150ms;
+  &:focus,
+  &:hover {
+    background-position-x: 100%;
+    color: #1b9aaa;
   }
 `;

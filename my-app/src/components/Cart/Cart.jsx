@@ -6,7 +6,7 @@ import {
   CartEmpty,
   CartList,
   CartItem,
-  CartTotal
+  CartTotal,
 } from "./Cart.styled";
 
 export const Cart = () => {
