@@ -18,7 +18,7 @@ export const BookList = () => {
   const [books] = useContext(BooksContext);
   const [filterPrice, setFilterPrice] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
-  const defaultImage = "/imageNotFound.png";
+  const defaultImage = "/x-course-task/imageNotFound.png";
 
   const handleFilterChange = (event) => {
     setFilterPrice(event.target.value);

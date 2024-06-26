@@ -19,7 +19,7 @@ export const SpecificBook = () => {
   const [books, cartList, setCartList] = useContext(BooksContext);
   const { bookId } = useParams();
   const book = books.find((item) => item.id === parseInt(bookId));
-  const defaultImage = "/imageNotFound.png";
+  const defaultImage = "/x-course-task/imageNotFound.png";
 
   useEffect(() => {
     if (numberOfBooks > book.amount) {

@@ -10,10 +10,10 @@ import { BooksProvider } from "./context/BooksContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="x-course-task">
       <GlobalStyle />
       <AuthProvider>
-        <BooksProvider>
+        <BooksProvider >
           <App />
         </BooksProvider>
       </AuthProvider>

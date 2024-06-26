@@ -39,7 +39,7 @@ export const Signin = () => {
     <section>
       <Container>
         <SigninWrapper>
-          <UserPhoto src="/avatar.png" alt="user avatar" />
+          <UserPhoto src="x-course-task/avatar.png" alt="user avatar" />
           <Form>
             <label htmlFor="user">Username</label>
             <Input
