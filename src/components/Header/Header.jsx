@@ -31,13 +31,13 @@ export const Header = () => {
           {isLoggedIn && (
             <HeaderUserInfo>
               <Cart to="/cart">
-                <img src="x-course-task/cart.svg" alt="cart" width="50" />
+                <img src="/x-course-task/cart.svg" alt="cart" width="50" />
               </Cart>
               <Btn to="/" onClick={handleSignOut}>
                 Sign-Out
               </Btn>
               <User>
-                <img src="x-course-task/avatar.png" alt="user avatar" width="40" />
+                <img src="/x-course-task/avatar.png" alt="user avatar" width="40" />
                 <p>{storedUsername}</p>
               </User>
             </HeaderUserInfo>
