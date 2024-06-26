@@ -11,7 +11,7 @@ const GlobalStyle = () => (
         box-sizing: border-box; /* Fix: Remove quotes around box-sizing and use camelCase */
         color: inherit;
       }
-      
+
       html,
       body,
       div,
@@ -147,7 +147,15 @@ const GlobalStyle = () => (
         border-collapse: collapse;
         border-spacing: 0;
       }
-      h1,h2,h3,h4,p,span,a,button,li{
+      h1,
+      h2,
+      h3,
+      h4,
+      p,
+      span,
+      a,
+      button,
+      li {
         caret-color: transparent;
       }
     `}

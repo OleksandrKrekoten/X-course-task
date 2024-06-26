@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import booksData from "../../db/books.json";
+import React, { useState } from "react";
+import { useContext } from "react";
 import {
   List,
   Img,
@@ -12,14 +12,14 @@ import {
   Input,
 } from "./BookList.styled";
 import { Container } from "../Container.styled";
+import { BooksContext } from "../../context/BooksContext";
+
 export const BookList = () => {
-  const [products, setProducts] = useState([]);
+  const [books] = useContext(BooksContext);
   const [filterPrice, setFilterPrice] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const defaultImage = "/imageNotFound.png";
-  useEffect(() => {
-    setProducts(booksData.books);
-  }, []);
+
   const handleFilterChange = (event) => {
     setFilterPrice(event.target.value);
   };
@@ -53,7 +53,7 @@ export const BookList = () => {
     const search = searchTerm.toLowerCase();
     return title.includes(search);
   };
-  const filteredProducts = products.filter(
+  const filteredProducts = books.filter(
     (product) => filterByPrice(product) && filterByTitle(product)
   );
 

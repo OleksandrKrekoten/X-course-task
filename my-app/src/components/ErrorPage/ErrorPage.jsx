@@ -18,7 +18,7 @@ export const ErrorPage = () => {
           <Accent>Oops</Accent>, something went wrong. <Accent>404</Accent>{" "}
           error
         </ErrorText>
-        <Btn to="/">Go to Home</Btn>
+        <Btn to="book-list">Go to Home</Btn>
       </Page404>
     </Container>
   );

@@ -4,36 +4,35 @@ export const FlexWrapper = styled.div`
   display: flex;
   gap: 20px;
   flex-direction: column;
-  margin-top: 20px ;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   @media screen and (min-width: 720px) {
-    justify-content: space-evenly;
     flex-direction: row;
+    gap: 18%;
+    align-items: start;
   }
 `;
 export const BookImg = styled.img`
-  width: 100%;
-  @media screen and (min-width: 720px) {
-    width: 38%;
-  }
-  @media screen and (min-width: 1400px) {
-    width: 25%;
-  }
+  width: 250px;
+  height: 328px;
 `;
+
 export const BookDescription = styled.div`
   display: flex;
   flex-direction: column;
- gap: 20px;
+  gap: 20px;
 
-  @media screen and (min-width: 1400px) {
+  @media screen and (min-width: 1200px) {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
   }
 `;
 export const AddToCartForm = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   font-weight: 800;
   gap: 20px;
   width: 100%;
@@ -41,8 +40,9 @@ flex-direction: column;
   height: max-content;
   border: 2px dotted #000;
 
-  @media screen and (min-width: 1400px) {
-    width: 50%;
+  @media screen and (min-width: 1200px) {
+    width: 300px;
+    margin-left: 50px;
   }
 `;
 export const AddToCartText = styled.p`
@@ -69,4 +69,7 @@ export const SubmitBtn = styled.button`
     background-position-x: 100%;
     color: #1b9aaa;
   }
+`;
+export const FontAccent = styled.span`
+  font-weight: 800;
 `;

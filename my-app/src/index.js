@@ -4,7 +4,8 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import GlobalStyle from "./globalStyles/globalStyleReset.styled";
-import { AuthProvider } from "./contexts/AuthContext";
+import { AuthProvider } from "./context/AuthContext";
+import { BooksProvider } from "./context/BooksContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,7 +13,9 @@ root.render(
     <BrowserRouter>
       <GlobalStyle />
       <AuthProvider>
-        <App />
+        <BooksProvider>
+          <App />
+        </BooksProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>

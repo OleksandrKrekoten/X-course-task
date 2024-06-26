@@ -1,4 +1,6 @@
-import { Container } from "../Container.styled";
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Container } from "../Container.styled.js";
 import {
   FlexWrapper,
   BookImg,
@@ -7,72 +9,92 @@ import {
   AddToCartText,
   AddToCartInput,
   SubmitBtn,
+  FontAccent,
 } from "./SpecificBook.styled";
+import { BooksContext } from "../../context/BooksContext.jsx";
 
 export const SpecificBook = () => {
+  const [numberOfBooks, setNumberOfBooks] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [books, cartList, setCartList] = useContext(BooksContext);
+  const { bookId } = useParams();
+  const book = books.find((item) => item.id === parseInt(bookId));
+  const defaultImage = "/imageNotFound.png";
+
+  useEffect(() => {
+    if (numberOfBooks > book.amount) {
+      setNumberOfBooks(book.amount);
+    }
+    setTotalPrice((numberOfBooks * book.price).toFixed(2));
+  }, [book.amount, book.price, numberOfBooks]);
+
+  const handleCountChange = (e) => {
+    const newCount = parseInt(e.target.value) || "";
+    setNumberOfBooks(newCount);
+  };
+
+  const handleAddToCart = () => {
+    if (cartList.some((item) => item.id === book.id)) {
+      alert("This book is already in your shopping cart");
+      return;
+    }
+    const bookWithQuantity = { ...book, numberOfBooks, totalPrice };
+    setCartList((prev) => [...prev, bookWithQuantity]);
+  };
   return (
     <Container>
       <FlexWrapper>
-        <BookImg src="/git_for_teams.jpg" alt="book cover" />
+        <BookImg src={book.image || defaultImage} alt="book cover" />
         <BookDescription>
           <div>
             <p>
-              <span>
-                <strong>Book name: </strong>
-              </span>
-              JavaScript: The Definitive Guide, 7th Edition
+              <FontAccent>Book name: </FontAccent>
+              {book.title}
             </p>
             <p>
-              <span>
-                <strong>Book author: </strong>
-              </span>
-              David Flanagan
+              <FontAccent>Book author: </FontAccent>
+              {book.author}
             </p>
             <p>
-              <span>
-                <strong>Book level: </strong>
-              </span>
-              Beginner
+              <FontAccent>Book level: </FontAccent>
+              {book.level}
             </p>
             <p>
-              <span>
-                <strong>Book tags: </strong>
-              </span>
-              frontend
+              <FontAccent>Book tags:</FontAccent>{" "}
+              {book.tags.map((tag, index) => (
+                <span key={index}>
+                  {tag}
+                  {index !== book.tags.length - 1 ? ", " : ""}
+                </span>
+              ))}
             </p>
           </div>
           <AddToCartForm>
             <AddToCartText>
-              Price: <span id="price">$52.72</span>
+              Price: <span id="price">${book.price}</span>
             </AddToCartText>
             <AddToCartText>
-              <label for="count"> Count</label>
-              <AddToCartInput type="number" min="1" max="42" id="count" />
+              <label htmlFor="count"> Count</label>
+              <AddToCartInput
+                type="number"
+                min="1"
+                max={book.amount}
+                onChange={handleCountChange}
+                id="count"
+                value={numberOfBooks}
+              />
             </AddToCartText>
 
             <AddToCartText>
-              Total price: <span id="totalPrice"> $52.72</span>
+              Total price: <span id="totalPrice"> ${totalPrice}</span>
             </AddToCartText>
-            <SubmitBtn type="submit">Add to cart</SubmitBtn>
+            <SubmitBtn onClick={handleAddToCart}>Add to cart</SubmitBtn>
           </AddToCartForm>
         </BookDescription>
       </FlexWrapper>
       <p>
-        <span>
-          <strong>Description: </strong>
-        </span>
-        JavaScript is the programming language of the web and is used by more
-        software developers today than any other programming language. For
-        nearly 25 years this best seller has been the go-to guide for JavaScript
-        programmers. The seventh edition is fully updated to cover the 2020
-        version of JavaScript, and new chapters cover classes, modules,
-        iterators, generators, Promises, async/await, and metaprogramming.
-        You’ll find illuminating and engaging example code throughout. This book
-        is for programmers who want to learn JavaScript and for web developers
-        who want to take their understanding and mastery to the next level. It
-        begins by explaining the JavaScript language itself, in detail, from the
-        bottom up. It then builds on that foundation to cover the web platform
-        and Node.js.
+        <FontAccent>Description: </FontAccent>
+        {book.description}
       </p>
     </Container>
   );

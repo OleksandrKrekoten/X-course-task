@@ -1,4 +1,4 @@
-import { AuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 import { Container } from "../Container.styled";
 import {
   SiteHeader,

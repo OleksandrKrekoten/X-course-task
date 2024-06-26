@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container } from "../Container.styled";
 import {
@@ -8,16 +8,18 @@ import {
   Input,
   SubmitBtn,
 } from "./Signin.styled";
-import { AuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 export const Signin = () => {
   const [isLoggedIn, setIsLoggedIn] = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [isDisabled, setІsDisabled] = useState(true);
-
   const navigate = useNavigate();
-  if (isLoggedIn) {
-    navigate("/book-list");
-  }
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/book-list");
+    }
+  }, [isLoggedIn, navigate]);
+
   const handleUsernameChange = (e) => {
     const newUsername = e.target.value;
     if (newUsername.length >= 4) {
