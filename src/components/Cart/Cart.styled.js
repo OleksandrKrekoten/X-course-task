@@ -33,9 +33,9 @@ export const CartList = styled.ul`
     width: 100%;
   }
 `;
-export const CartTitle =styled.h2`
-width: 50%;
-`
+export const CartTitle = styled.h2`
+  width: 50%;
+`;
 export const CartItem = styled.li`
   display: flex;
   gap: 30px;

@@ -12,7 +12,7 @@ import { CartEmpty } from "../CartEmpty/CartEmpty";
 
 export const Cart = () => {
   const [cartTotal, setCartTotal] = useState(0);
-  const [_, cartList, setCartList] = useContext(BooksContext);
+  const [cartList, setCartList] = useContext(BooksContext);
   useEffect(() => {
     const total = cartList
       .reduce((sum, book) => {

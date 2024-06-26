@@ -82,6 +82,7 @@ export const SpecificBook = () => {
                 onChange={handleCountChange}
                 id="count"
                 value={numberOfBooks}
+                data-testid="count-input"
               />
             </AddToCartText>
 

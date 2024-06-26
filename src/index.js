@@ -13,7 +13,7 @@ root.render(
     <BrowserRouter basename="x-course-task">
       <GlobalStyle />
       <AuthProvider>
-        <BooksProvider >
+        <BooksProvider>
           <App />
         </BooksProvider>
       </AuthProvider>
