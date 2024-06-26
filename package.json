@@ -1,8 +1,8 @@
 {
-  "name": "my-app",
+  "name": "x-course-task",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://oleksandrkrekoten.github.io/X-course-task/",
+  "homepage": "https://oleksandrkrekoten.github.io/x-course-task/",
   "dependencies": {
     "@emotion/styled": "^11.11.5",
     "@testing-library/jest-dom": "^5.17.0",
@@ -19,8 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.1.1"
   }
 }
